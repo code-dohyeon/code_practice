@@ -18,10 +18,11 @@
         ::-webkit-scrollbar-track { background-color: rgb(35, 49, 35);; border-radius: 8px; }
 
 
-        .container { width: 1440px; }
+        .container { width: 1440px; border: 1px solid black; }
         header { height: 80px; position: fixed; z-index: 2; padding: 10px 10px 10px 10px; color: white; left: 240px; }
             .logo_box { width: 200px; height: 100%; float: left; display: flex; justify-content: start; align-items: center; }
                 .logo_box > svg { margin: 0px; opacity: .8; transition: .3s; }
+                .logo_box > svg:hover { opacity: 1; cursor: pointer; }
 
             nav { width: 600px; height: 100%; display: flex; float: right; font-weight: bold; }
             nav > li { width: calc(100% / 5); height: 100%; display: flex; justify-content: center; align-items: center; }
@@ -40,7 +41,9 @@
                 .info > .info_text { padding-top: 80px; }
 
 
-        .menu1 { height: 100%; }
+        #menu1 { height: 100%; }
+        #menu2 { height: 100%; }
+        #menu3 { height: 100%; }
 
 
         footer { width: 100%; height: 300px; background-color: rgb(5, 24, 5); display: flex; justify-content: center; align-items: center; }
@@ -81,7 +84,15 @@ style="fill:#FFFFFF;">
         </div>
     </div>
 
-    <div class="menu1 container">
+    <div id="menu1" class="container">
+
+    </div>
+
+    <div id="menu2" class="container">
+
+    </div>
+
+    <div id="menu3" class="container">
 
     </div>
 
