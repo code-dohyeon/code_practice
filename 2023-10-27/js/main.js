@@ -2,7 +2,8 @@ let backgrounds = document.querySelectorAll(".content_background");
 let index = 1;
 let logo = document.querySelector("svg");
 let nav = document.querySelector("nav");
-
+let menus = document.querySelectorAll(".menu");
+let inner_height = window.innerHeight;
 setInterval(() => {
     console.log(index);
     if(index > 2) {
@@ -28,3 +29,4 @@ window.addEventListener("scroll", e => {
         }
     
 });
+
