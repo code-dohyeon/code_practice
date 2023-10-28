@@ -7,20 +7,30 @@
 
     <style>
         * { margin: 0 auto; padding: 0px; box-sizing: border-box; position: relative; }
-        body { width: 100vw; height: 50px; }
+        a { text-decoration: none; }
+        ul, li { list-style: none; }
+        body { width: 100vw; height: 80px; border: 1px solid black; }
         header { width: 100%; height: 100%; }
+            .logo_box { width: 200px; height: 100%; float: left; border: 1px solid black; }
+            nav { width: 600px; height: 100%; border: 1px solid black; display: flex; float: right; }
+            nav > li { width: calc(100% / 5); border: 1px solid black; height: 100%; }
         .body { width: 100%; height: 100%; }
     </style>
 </head>
 <body>
     <header>
-        
+        <div class="logo_box"></div>
+        <nav>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </nav>
     </header>
 
     <content class="body">
-        asdjkl
 
-        asd
     </content>
 
     <footer>
