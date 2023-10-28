@@ -6,51 +6,95 @@
     <title>Document</title>
 
     <style>
-        * { margin: 0 auto; padding: 0px; box-sizing: border-box; position: relative; }
+        * { margin: 0px auto; padding: 0px; box-sizing: border-box; position: relative; }
         a { text-decoration: none; }
         ul, li { list-style: none; }
-        body { width: 100vw; height: 50px; border: 1px solid black; }
-        header { width: 100%; height: 100%; position: absolute; }
-            .logo_box { width: 200px; height: 100%; float: left; border: 1px solid black; display: flex; }
-            nav { width: 600px; height: 100%; display: flex; float: right; }
-            nav > li { width: calc(100% / 5); border: 1px solid black; height: 100%; display: flex; justify-content: center; align-items: center; }
-                .nav_item { text-align: center; }
-                .nav_item:hover { background-color: #dff2ff; }
-        .body { width: 100%; height: 400px; border: 1px solid black; overflow: hidden; }
-            .content_background { width: 100%; height: 100%; }
-            .contnet_backround:nth-child(1) { background-image: url(../2023-10-27/img/forest-438432_1920.jpg); }
-            .contnet_backround:nth-child(2) { background-image: url(../2023-10-27/img/forest-653448_1920.jpg); }
-            .contnet_backround:nth-child(3) { background-image: url(../2023-10-27/img/secret-3120483_1920.jpg); }
+        body { width: 100vw; height: 100vh; overflow-x: hidden; }
+
+        
+        ::-webkit-scrollbar { width: 8px; background-color: none; }
+        ::-webkit-scrollbar-thumb { background-color: rgb(27, 118, 27); border-radius: 8px; }
+        ::-webkit-scrollbar-track { background-color: rgb(35, 49, 35);; border-radius: 8px; }
+
+
+        .container { width: 1440px; }
+        header { height: 80px; position: fixed; z-index: 2; padding: 10px 10px 10px 10px; color: white; left: 240px; }
+            .logo_box { width: 200px; height: 100%; float: left; display: flex; justify-content: start; align-items: center; }
+                .logo_box > svg { margin: 0px; opacity: .8; transition: .3s; }
+
+            nav { width: 600px; height: 100%; display: flex; float: right; font-weight: bold; }
+            nav > li { width: calc(100% / 5); height: 100%; display: flex; justify-content: center; align-items: center; }
+                .nav_item { text-align: center; opacity: .5; transition: .3s; transform-origin: center; border-bottom: 2px solid rgba(0, 128, 0, 0); user-select: none; }
+                .nav_item:hover { opacity: 1; cursor: pointer; font-weight: bold; border-bottom: 2px solid rgb(27, 118, 27); }
+
+
+        .content { width: 100%; height: 100vh; overflow: hidden; }
+            .content_background { width: 100%; height: 100%; position: absolute; background-size: cover; background-position: center bottom; z-index: 0; opacity: 0; transition: 1s; filter: brightness(.5); }
+            .content_background:nth-child(1) { background-image: url(img/forest-438432_1920.jpg); opacity: 1; }
+            .content_background:nth-child(2) { background-image: url(img/forest-653448_1920.jpg); }
+            .content_background:nth-child(3) { background-image: url(img/secret-3120483_1920.jpg); }
+
+            .info { font-size: 18px; text-align: left; z-index: 1; color: rgba(255, 255, 255, 0.649); line-height: 30px; padding: 450px 0px 0px 0px ; user-select: none; }
+                .info > .info_head { font-size: 68px; font-weight: bold; color: white;  }
+                .info > .info_text { padding-top: 80px; }
+
+
+        .menu1 { height: 100%; }
+
+
+        footer { width: 100%; height: 300px; background-color: rgb(5, 24, 5); display: flex; justify-content: center; align-items: center; }
+            .copyright { color: white; font-size: 16px; font-weight: bold; opacity: .5; user-select: none; }
     </style>
 </head>
 <body>
-    <header>
+    <header class="container">
         <div class="logo_box">
-            <img src="../2023-10-27/img/images.png" alt="logo_img" height="100%">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="60%" viewBox="0 0 44.169 45.988"
+style="fill:#FFFFFF;">
+            <path d="M 21.955078 0 A 1.029 1.029 0 0 0 21.292969 0.28125 A 11.988 11.988 0 0 0 18 7.9882812 A 11.982 11.982 0 0 0 21.292969 15.699219 L 22.169922 16.578125 L 23.5 17.900391 L 28.585938 22.986328 L 23.5 28.074219 L 24.292969 28.867188 A 13.886 13.886 0 0 1 28.171875 37.988281 A 11.481 11.481 0 0 1 27.880859 40.521484 L 43.292969 25.109375 A 3 3 0 0 0 43.292969 20.867188 L 22.705078 0.28125 A 1.029 1.029 0 0 0 21.955078 0 z M 16.289062 5.4550781 L 0.87695312 20.867188 A 3 3 0 0 0 0.87695312 25.109375 L 21.462891 45.699219 A 1 1 0 0 0 22.876953 45.699219 A 11.982 11.982 0 0 0 26.169922 37.992188 A 11.988 11.988 0 0 0 22.876953 30.285156 L 15.583984 22.988281 L 20.669922 17.900391 L 19.876953 17.107422 A 13.877 13.877 0 0 1 16 7.9882812 A 11.478 11.478 0 0 1 16.289062 5.4550781 z"></path>
+            </svg>
+            
         </div>
         <nav>
             <li class="nav_item">MENU1</li>
             <li class="nav_item">MENU2</li>
             <li class="nav_item">MENU3</li>
-            <li class="nav_item">MENU4</li>
-            <li class="nav_item">MENU5</li>
+            <li class="nav_item">SIGN IN</li>
+            <li class="nav_item">SIGN UP</li>
         </nav>
     </header>
 
-    <div class="body">
+    <div class="content">
         <div class="content_background"></div>
         <div class="content_background"></div>
         <div class="content_background"></div>
+        <div class="info container">
+            <h2 class="info_head">Lorem ipsum</h2>
+
+            <p class="info_text">
+                dolor sit amet consectetur adipisicing elit. Fuga fugit velit<br>
+                exercitationem numquam dolore libero quos cumque<br>
+                sunt molestiae blanditiis perferendis nemo quam adipisci sit,<br>
+                vero ipsum accusantium maxime accusamus!
+            </p>
+        </div>
     </div>
 
-    <footer>
+    <div class="menu1 container">
 
+    </div>
+
+
+    <footer>
+        <p class="copyright">
+            Copyright 2023. Dohyeon. All rights reserved.
+        </p>
     </footer>
 
 
 
     <script>
-
+        
     </script>
 </body>
 </html>
