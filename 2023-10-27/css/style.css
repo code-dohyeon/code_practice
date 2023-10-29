@@ -1,16 +1,14 @@
 html {  scroll-behavior: smooth; }
-        * { margin: 0px auto; padding: 0px; box-sizing: border-box; position: relative; }
+        * { margin: 0px auto; padding: 0px; box-sizing: border-box; position: relative; user-select: none; }
         a { text-decoration: none; }
         ul, li { list-style: none; }
         body { width: 100vw; height: 100vh; overflow-x: hidden; }
 
         
-        ::-webkit-scrollbar { width: 8px; background-color: none; }
-        ::-webkit-scrollbar-thumb { background-color: rgb(27, 118, 27); border-radius: 8px; }
-        ::-webkit-scrollbar-track { background-color: rgb(35, 49, 35);; border-radius: 8px; }
+        ::-webkit-scrollbar { width: 0px; }
 
 
-        .container { width: 1440px; border: 1px solid black; }
+        .container { width: 1440px; border: 1px solid #999999; }
         header { height: 80px; position: fixed; z-index: 2; padding: 10px 10px 10px 10px; color: white; }
             .logo_box { width: 200px; height: 100%; float: left; display: flex; justify-content: start; align-items: center; }
                 .logo_box > svg { margin: 0px; opacity: .8; transition: .3s; }
@@ -28,16 +26,16 @@ html {  scroll-behavior: smooth; }
             .content_background:nth-child(2) { background-image: url(../img/forest-653448_1920.jpg); }
             .content_background:nth-child(3) { background-image: url(../img/secret-3120483_1920.jpg); }
 
-            .info { font-size: 18px; text-align: left; z-index: 1; color: rgba(255, 255, 255, 0.649); line-height: 30px; padding: 450px 0px 0px 0px ; user-select: none; }
+            .info { font-size: 18px; text-align: left; z-index: 1; color: rgba(255, 255, 255, 0.649); line-height: 30px; padding: 500px 0px 0px 0px ; user-select: none; }
                 .info > .info_head { font-size: 68px; font-weight: bold; color: white;  }
                 .info > .info_text { padding-top: 80px; }
 
 
         #menu1 {width: 100%; height: 100%; text-align: left; }
-            #menu_background { width: 100%; height: 100%; position: absolute; }
-            .info_box { height: 100%; padding-top: 400px; color: white; }
-                .menu_head { font-size: 62px; font-weight: bold; padding-bottom: 50px; }
-                .menu1_info { font-size: 16px; opacity: .8; }
+            #menu_background { width: 100%; height: 100%; position: absolute; overflow: hidden; filter: brightness(.3); }
+            .info_box { height: 100%; padding-top: 450px; color: white; }
+                .menu_head { font-size: 68px; font-weight: bold; padding-bottom: 80px; }
+                .menu1_info { font-size: 18px; opacity: .8; }
         #menu2 { height: 100%; }
         #menu3 { height: 100%; }
 

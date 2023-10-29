@@ -3,12 +3,14 @@ let logo = document.querySelector("svg");
 let nav = document.querySelector("nav");
 let menus = document.querySelectorAll(".menu");
 let header = document.querySelector("header");
+let video = document.querySelector("video");
 let inner_height = [0, innerHeight, innerHeight*2, innerHeight*3];
 let index = 1;
 let page = 0;
 let wheel = true;
 
 header.style.left=`${(innerWidth - 1440) / 2}px`;
+video.height=innerHeight;
 
 function addEvent() {
     for (let i = 1; i < menus.length+1; i++) {
