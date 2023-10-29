@@ -1,21 +1,24 @@
 let backgrounds = document.querySelectorAll(".content_background");
-let index = 1;
 let logo = document.querySelector("svg");
 let nav = document.querySelector("nav");
 let menus = document.querySelectorAll(".menu");
-let inner_height = [innerHeight, innerHeight*2, innerHeight*3];
+let header = document.querySelector("header");
+let inner_height = [0, innerHeight, innerHeight*2, innerHeight*3];
+let index = 1;
 let page = 0;
 let wheel = true;
 
+header.style.left=`${(innerWidth - 1440) / 2}px`;
+
 function addEvent() {
-    for (let i = 0; i < menus.length; i++) {
-        menus[i].addEventListener("click", () => {
+    for (let i = 1; i < menus.length+1; i++) {
+        menus[i-1].addEventListener("click", () => {
             window.scrollTo(0, inner_height[i]);
         }, false);
     }
 
     window.addEventListener("scroll", e => {
-        if(window.scrollY < 929) {
+        if(window.scrollY < innerHeight*2) {
             logo.style.fill="#ffffff";
             nav.style.color="white";
         }
@@ -31,22 +34,24 @@ function addEvent() {
 
     window.addEventListener("wheel", (e) => {
         e.preventDefault();
-        console.log(e);
 
-        if(e.deltaY > 0 && page < inner_height.length) {
-            window.scrollTo(0, inner_height[page]);
+        if(e.deltaY > 0 && page < inner_height.length-1) {
             page += 1;
+            window.scrollTo(0, inner_height[page]);
+            console.log(`page: ${page}, height: ${inner_height[page]}`);
+
         }
-        else if(e.deltaY < 0) {
+        else if(e.deltaY < 0 && page > 0) {
             page -= 1;
             window.scrollTo(0, inner_height[page]);
+            console.log(`page: ${page}, height: ${inner_height[page]}`);
+
         }
     }, { passive: false });
 }; addEvent();
 
 
 setInterval(() => {
-    console.log(index);
     if(index > 2) {
         index = 1;
         backgrounds[1].style="opacity: 0; z-index: 0;";
