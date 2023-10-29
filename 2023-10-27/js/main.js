@@ -16,9 +16,14 @@ window.onbeforeunload = () => {
 
 window.onload = () => {
     console.log(window.localStorage);
-    window.scrollTo(0, window.localStorage.getItem("scrollpos"));
+    let scrollpos = window.localStorage.getItem("scrollpos")
+    window.scrollTo(0, scrollpos);
+    for (let i = 0; i < inner_height.length; i++) {
+        if(inner_height[i] == window.scrollY) {
+            page = i
+        }
+    }
     window.localStorage.removeItem("scrollpos");
-    console.log(window.scrollY);
 }
 
 function init() {
