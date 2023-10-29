@@ -15,12 +15,12 @@ window.onbeforeunload = () => {
 }
 
 window.onload = () => {
-    console.log(window.localStorage);
+    // console.log(window.localStorage);
     let scrollpos = window.localStorage.getItem("scrollpos")
     window.scrollTo(0, scrollpos);
     for (let i = 0; i < inner_height.length; i++) {
         if(inner_height[i] == window.scrollY) {
-            page = i
+            page = i;
         }
     }
     window.localStorage.removeItem("scrollpos");
@@ -48,6 +48,7 @@ function addEvent() {
     for (let i = 1; i < menus.length+1; i++) {
         menus[i-1].addEventListener("click", () => {
             window.scrollTo(0, inner_height[i]);
+            page = i;
             console.log("a");
         }, false);
     }
@@ -67,6 +68,7 @@ function addEvent() {
     
     logo.addEventListener("click", () => {
         window.scrollTo(0, 0);
+        page = 0;
         console.log("a");
     }, false);
 
