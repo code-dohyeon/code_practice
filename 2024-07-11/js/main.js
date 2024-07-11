@@ -7,7 +7,7 @@ class Main {
             document.body.appendChild(container);
 
         let container_items = document.createElement("li");
-            container_items.style=`width: calc(99%/50); height: calc(99%/50);`;
+            container_items.style=`width: calc(99%/50); height: calc(99%/50); border: 1px solid black;`;
     }
 
 
