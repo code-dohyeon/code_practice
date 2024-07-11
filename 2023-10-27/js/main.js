@@ -5,6 +5,7 @@ let menus = document.querySelectorAll(".menu");
 let header = document.querySelector("header");
 let video = document.querySelector("video");
 let html = document.querySelector("html");
+let menu2_head = document.querySelector(".menu2_head");
 let inner_height = [0, innerHeight, innerHeight*2, innerHeight*3];
 let index = 1;
 let page = 0;
@@ -49,13 +50,13 @@ function addEvent() {
         menus[i-1].addEventListener("click", () => {
             window.scrollTo(0, inner_height[i]);
             page = i;
-            console.log("a");
+            // console.log("a");
         }, false);
     }
 
     window.addEventListener("scroll", e => {
         e.preventDefault();
-        if(window.scrollY < innerHeight*2) {
+        if(window.scrollY < innerHeight*3) {
             logo.style.fill="#ffffff";
             nav.style.color="white";
         }
@@ -64,12 +65,24 @@ function addEvent() {
             nav.style.color="black";
             }
         // console.log("a");
+
+        if(window.scrollY > innerHeight*1) {
+            menu2_head.style.opacity="1";
+            menu2_head.style.transform="translate(-50%, 0px)";
+            menu2_head.style.transition="2s";
+            console.log("a");
+        }
+        else {
+            menu2_head.style.opacity="0";
+            menu2_head.style.transform="translate(-50%, -500px)";
+            menu2_head.style.transition="";
+        }
     }, false, {passive : false});
     
     logo.addEventListener("click", () => {
         window.scrollTo(0, 0);
         page = 0;
-        console.log("a");
+        // console.log("a");
     }, false);
 
     window.addEventListener("wheel", (e) => {
@@ -87,6 +100,6 @@ function addEvent() {
             console.log(`page: ${page}, height: ${inner_height[page]}`);
 
         }
-        console.log("a");
+        // console.log("a");
     }, { passive: false });
 }; addEvent();

@@ -9,7 +9,7 @@ html {  scroll-behavior: smooth; }
 
         /* border: 1px solid #999999; */
         .container { width: 1440px; }
-        header { height: 80px; position: fixed; z-index: 99999; padding: 10px 10px 10px 10px; color: white; }
+        header { height: 80px; position: fixed; z-index: 999; padding: 10px 10px 10px 10px; color: white; }
             .logo_box { width: 200px; height: 100%; float: left; display: flex; justify-content: start; align-items: center; }
                 .logo_box > svg { margin: 0px; opacity: .8; transition: .3s; }
                 .logo_box > svg:hover { opacity: 1; cursor: pointer; }
@@ -45,17 +45,26 @@ html {  scroll-behavior: smooth; }
             .info_box { height: 100%; padding-top: 400px; color: white; z-index: 3; }
                 .menu_head { font-size: 68px; font-weight: bold; padding-bottom: 80px; }
                 .menu1_info { font-size: 18px; opacity: .8; }
-        #menu2 { width: 100%; height: 100%; background-color:rgb(19, 43, 13); overflow: hidden; }
-                .menu2_head { font-size: 150px; color: white; font-weight: bold; padding: 0px; margin: 0px; position: absolute; top: 125px; left: 50%; transform: translateX(-50%); opacity: .8; }
+
+        #menu2 { width: 100%; height: 100%; overflow: hidden; }
+                .menu2_background { width: 100%; height: 100%; background: url(../img/forest-5652944_1920.jpg); filter: brightness(.3); position: absolute; z-index: 0; top: 0px; left: 0px; }
+                .menu2_head { font-size: 68px; color: white; font-weight: bold; padding: 0px; margin: 0px; position: absolute; top: 125px; left: 50%; transform: translate(-50%, 0px); text-align: center; }
+                .menu2_span { font-size: 18px; opacity: 0.8; padding-top: 20px; line-height: 30px; }
                 .menu2_text_container { height: 80%; display: flex; justify-content: space-between; padding-top: 350px; }
-                    .item_box { width: 400px; height: 500px; box-shadow: 0px 0px 20px black, inset 0px 0px 3px rgb(7, 17, 5), inset 0px 0px 60px rgba(255, 255, 255, 0.075); overflow: hidden; }
+                    .item_box { width: 400px; height: 500px; box-shadow: 0px 0px 20px black, inset 0px 0px 3px rgb(7, 17, 5), inset 0px 0px 60px rgba(255, 255, 255, 0.075); overflow: hidden; transition: transform .5s; }
                     .item_box:nth-child(1) { border-radius: 30px 0px 0px 30px; }    
                     .item_box:nth-child(3) { border-radius: 0px 30px 30px 0px; }
+                    .item_box:hover { transform: translateY(-20px); }
                     
-                    .item_img_box { width: 100%; height: 225px; background: grey url(../img/mushrooms-5850099_1920.jpg) center center; background-size: cover; filter: brightness(.8); box-shadow: 0px 0px 10px rgba(0, 0, 0, .5); }
-                    .item_text_box { width: 100%; height: 100%; color: white; padding: 50px 0px 0px 20px; }
-                        .item_header { font-size: 32px; font-weight: bold; }
-                        .item_text { font-size: 16px; padding-top: 10px; }
+                    .item_img_box { width: 100%; height: 225px; background: grey center center; background-size: cover; filter: brightness(.8); box-shadow: 0px 0px 10px rgba(0, 0, 0, .5); }
+                    #menu2_img1 { background-image: url(../img/mushrooms-5850099_1920.jpg); }
+                    #menu2_img2 { background-image: url(../img/fallow-deer-6138214_1920.jpg); }
+                    #menu2_img3 { background-image: url(../img/mushroom-4540020_1920.jpg); }
+
+                    .item_text_box { width: 100%; height: 100%; color: white; padding: 80px 0px 0px 30px; }
+                        .item_header { font-size: 30px; font-weight: bold; }
+                        .item_text { font-size: 16px; padding-top: 20px; }
+                        
         #menu3 { height: 100%; }
 
 
