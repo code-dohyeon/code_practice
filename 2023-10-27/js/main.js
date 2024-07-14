@@ -6,7 +6,7 @@ let header = document.querySelector("header");
 let video = document.querySelector("video");
 let html = document.querySelector("html");
 let menu2_head = document.querySelector(".menu2_head");
-let inner_height = [0, innerHeight, innerHeight*2, innerHeight*3];
+let inner_height = [0, innerHeight, innerHeight*2, innerHeight*3, innerHeight*4];
 let index = 1;
 let page = 0;
 
@@ -60,6 +60,14 @@ function addEvent() {
             logo.style.fill="#ffffff";
             nav.style.color="white";
         }
+        else if(window.scrollY < innerHeight*4) {
+            logo.style.fill="#000000";
+            nav.style.color="black";
+        }
+        else if(window.scrollY < innerHeight*5) {
+            logo.style.fill="#ffffff";
+            nav.style.color="white";
+        }
         else { 
             logo.style.fill="#000000";
             nav.style.color="black";
@@ -69,8 +77,8 @@ function addEvent() {
         if(window.scrollY > innerHeight*1) {
             menu2_head.style.opacity="1";
             menu2_head.style.transform="translate(-50%, 0px)";
-            menu2_head.style.transition="2s";
-            console.log("a");
+            menu2_head.style.transition="1s";
+            // console.log("a");
         }
         else {
             menu2_head.style.opacity="0";
