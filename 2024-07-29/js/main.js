@@ -1,6 +1,6 @@
 class Main {
     constructor() {
-        let requireUrl = this.requireUrl = './js/main.json';
+        let requireUrl = this.requireUrl = 'https:/https://raw.githubusercontent.com/code-dohyeon/code_practice/main/2024-07-29/main.json';
         let request = this.request = new XMLHttpRequest()
 
         this.readJson();
@@ -8,12 +8,9 @@ class Main {
 
     readJson() {
         this.request.open("GET", this.requireUrl);
-        this.request.responseType = "json";
-        this.request.send();
+        console.log(this.request.responseText);
 
-        let response = this.request.response;
-
-        console.log(JSON.stringify(response));
+        this.request.send(); 
     }
 }
 
