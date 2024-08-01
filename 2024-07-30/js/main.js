@@ -1,50 +1,52 @@
-class Main {
-    constructor() {
-        let col = this.col = 20;
-        let rows = this.rows = 10;
-        let block_size = 30;
-        let canvas = this.canvas = document.querySelector(".canvas");
-            canvas.width = rows * block_size;
-            canvas.height = col * block_size;
+const canvas = document.querySelector(".canvas");
+const ctx = canvas.getContext("2d");
 
-        if(canvas.getContext) {
-            let ctx = this.ctx = canvas.getContext("2d");
-            ctx.scale(block_size, block_size);
+ctx.canvas.width = COLS * BLOCK_SIZE;
+ctx.canvas.height = ROWS * BLOCK_SIZE;
+
+ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
+
+let board = new Board();
+
+const moves = {
+    [KEY.LEFT]: (p) => ({...p, x: p.x - 1}),
+    [KEY.RIGHT]: (p) => ({...p, x: p.x + 1}),
+    [KEY.DOWN]: (p) => ({...p, y: p.y + 1}),
+    [KEY.UP]: (p) => ({...p, y: p.y - 1}),
+    [KEY.SPACE]: (p) => ({...p, y: p.y + 1})
+}
+
+function play() {
+    board.reset();
+    console.table(board.grid);
+
+    let piece = new Piece(ctx);
+    piece.draw();
+
+    board.piece = piece;
+}play();
+
+document.addEventListener("keydown", e => {
+    let p = moves[e.keyCode](board.piece);
+
+    if(e.keyCode === KEY.SPACE) {
+        while(board.valid(p)) {
+            board.peice.move(p);
+            p = moves[KEY.DOWN](board.piece);
         }
+    }
+    else if(moves[e.keyCode]) {
+        event.preventDefault();
 
-        let grid = this.getEmptyBoard();
-        console.log(grid);
+        console.log(p);
+        if(board.valid(p)) {
+            board.piece.move(p); 
+        };
 
-        let shape = this.shape = [
-            [1, 0, 0],
-            [1, 1, 1],
-            [0, 0, 0]
-        ]
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-        let startX = this.startX = 1;
-        let startY = this.startY = 0;
-
-        this.draw();
+        board.piece.draw();
     }
 
-    getEmptyBoard() {
-        return Array.from(
-          {length: this.col}, () => Array(this.rows).fill(0)
-        );
-      }
-
-      draw() {
-        this.shape.forEach((row, y) => {
-            row.forEach((value, x) => {
-                console.log(`row: ${row}, Y: ${y}, value: ${value}, X: ${x}`);
-                if(value > 0) {
-                    this.ctx.fillRect(this.startX + x, this.startY + y, 1, 1);
-                }
-            });
-        });
-      }
-}
-
-window.onload = () => {
-    new Main();
-}
+    
+});
