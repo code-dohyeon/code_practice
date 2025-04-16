@@ -80,7 +80,7 @@
 //     { name: "Tyke", age: 20, isActive: true },
 //   ];
 
-//   오류류
+//   오류
 // const filtered_user = users?.filter((user) => user.isActive === true);
 
 // const totalAge = filtered_user.reduce((sum, user) => sum + user.age, 0);
@@ -126,3 +126,13 @@
 
 // console.log(job);
 
+// 조건에 맞는 이름만 추출하기
+// const users = [
+//     { name: "Anna", active: true },
+//     { name: "Ben", active: false },
+//     { name: "Cara", active: true }
+// ];
+
+// const filtered_users = users?.filter((user) => user.active).map(user => user.name);
+
+// console.log(filtered_users);
